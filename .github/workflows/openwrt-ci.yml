@@ -51,6 +51,9 @@ jobs:
           sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
+          
+      - name: fullconenat
+        run: git clone -b master --single-branch https://github.com/LGA1150/openwrt-fullconenat package/fullconenat
 
       - name: Generate configuration file
         run: make defconfig
